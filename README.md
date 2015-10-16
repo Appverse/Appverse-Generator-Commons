@@ -2,6 +2,11 @@
 ## [Appverse HTML5](http://appverse.org/)
 ![](http://appversed.files.wordpress.com/2012/12/logo.png)
 
+![](https://img.shields.io/npm/v/appverse-generator-commons.svg) ![](https://img.shields.io/npm/dm/appverse-generator-commons.svg) ![](https://img.shields.io/npm/l/appverse-generator-commons.svg)
+[![Dependency Status](https://img.shields.io/david/appverse/appverse-generator-commons.svg?style=flat-square)](https://david-dm.org/appverse/appverse-generator-commons)
+[![devDependency Status](https://img.shields.io/david/dev/appverse/appverse-generator-commons.svg?style=flat-square)](https://david-dm.org/appverse/appverse-generator-commons#info=devDependencies)
+[![Inline docs](http://inch-ci.org/github/appverse/appverse-generator-commons.svg)](http://inch-ci.org/github/appverse/appverse-generator-commons)
+
 ### appverse-generator-commons
 This is a Yeoman Base Generator for Appverse Generators
 
@@ -48,7 +53,7 @@ Methods
 
   **checkVersion()** - Notifies the user if there is a new published version of the generator.
 
-  **info (msg) ** -- Outputs the message the info format (green).
+  **info (msg)** -- Outputs the message the info format (green).
 
 ```javascript
   this.info ("here some information ... ");    
@@ -60,7 +65,7 @@ Output:
   [APPVERSE][INFO] :: here some information...
 ```
 
-  **warning (msg) ** -- Outputs the message the warning format (yellow).
+  **warning (msg)** -- Outputs the message the warning format (yellow).
 
 ```javascript
   this.warning ("here some warning information ... ");    
@@ -72,7 +77,7 @@ Output:
   [APPVERSE][WARNING] :: here some warning information...
 ```
 
-  **error (msg) ** -- Outputs the message the error format (red).
+  **error (msg)** -- Outputs the message the error format (red).
 
 ```javascript
   this.error ("error messages ... ");    
@@ -84,7 +89,7 @@ Output:
   [APPVERSE][ERROR] :: error messages ...
 ```  
 
-  **moveFiles(base,files) ** -- Move files to target path
+  **moveFiles(base,files)** -- Move files to target path
     *base path - Base path where files are located
     *file list - Array with files path within the base bath
 

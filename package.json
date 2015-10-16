@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "description": "Common methods for Appverse Generators",
   "main": "index.js",
-  "author": "Appverse",
+  "repository": "appverse/appverse-generator-commons",
+    "author": {
+        "name": "Appverse",
+        "email": "github@appverse.org",
+        "url": "http://appverse.org"
+    },
   "license": "MPL-2.0",
   "dependencies": {
     "chalk": "^1.1.1",
