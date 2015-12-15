@@ -40,6 +40,12 @@
 <dd><p>Add publish configuration to package.json
 publishConfig&quot;:{&quot;registry&quot;:&quot;<a href="http://my-internal-registry.local&quot;}">http://my-internal-registry.local&quot;}</a></p>
 </dd>
+<dt><a href="#addScriptsToIndex">addScriptsToIndex(scripts)</a></dt>
+<dd><p>Add Scripts tag to index.html</p>
+</dd>
+<dt><a href="#addCSSToIndex">addCSSToIndex(lynks)</a></dt>
+<dd><p>Add lynk tags to index.html</p>
+</dd>
 </dl>
 <a name="welcome"></a>
 ## welcome(pkg)
@@ -170,4 +176,24 @@ Add publish configuration to package.jsonpublishConfig":{"registry":"http://my-
 | Param | Type | Description |
 | --- | --- | --- |
 | url | <code>string</code> | Registry url |
+
+<a name="addScriptsToIndex"></a>
+## addScriptsToIndex(scripts)
+Add Scripts tag to index.html
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| scripts | <code>Array.&lt;string&gt;</code> | Scripts path array |
+
+<a name="addCSSToIndex"></a>
+## addCSSToIndex(lynks)
+Add lynk tags to index.html
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| lynks | <code>Array.&lt;string&gt;</code> | Scripts path array |
 
