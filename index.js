@@ -22,6 +22,7 @@
 'use strict';
 var os = require ('os');
 var chalk = require ('chalk');
+var cheerio = require('cheerio');
 var path = require ('path');
 var updateNotifier = require('update-notifier');
 var yeoman = require ('yeoman-generator');
@@ -198,7 +199,66 @@ var appverseGenerator = yeoman.generators.Base.extend({
     var pkg = require(this.destinationPath('package.json'));
     pkg.publishConfig.registry = url;
     this.fs.write(this.destinationPath('package.json'), JSON.stringify(pkg));
+  },
+/**
+ * Add Scripts tag to index.html
+ * @param {string[]} scripts - Scripts path array
+ **/
+ addScriptsToIndex: function addScriptsToIndex(scripts) {
+    this.info(" Adding scripts to index.html");
+    var index = this.fs.read(this.destinationPath('app/index.html'));
+    var indexHTML = cheerio.load(index);
+    var write = false;
+    scripts.forEach(function (script) {
+        var scriptTag = '\n <script src=\"' + script + '\"></script>';
+        var exists = false;
+        for (var i = 0; i < indexHTML('script').length; i++) {
+            var current = indexHTML('script').get()[i].attribs.src;
+            if (current === script) {
+                exists = true;
+                break;
+            }
+        }
+        if (!exists) {
+            write = true;
+            indexHTML(scriptTag).insertAfter(indexHTML('script').get()[indexHTML('script').length - 1]);
+        }
+    });
+    if (write) {
+        this.fs.write(this.destinationPath('app/index.html'), indexHTML.html());
+    } else {
+        this.info(" >< Scripts already exists at index.html");
+    }
+}, /**
+* Add lynk tags to index.html
+* @param {string[]} lynks - Scripts path array
+**/
+addCSSToIndex: function addCSSToIndex(scripts) {
+  this.info('Adding scripts to index.html');
+  var index = this.fs.read(this.destinationPath('app/index.html'));
+  var indexHTML = cheerio.load(index);
+  var write = false;
+  scripts.forEach(function (script) {
+      var scriptTag = '\n <link rel="stylesheet" href=\"' + script + '\"></link>';
+      var exists = false;
+      for (var i = 0; i < indexHTML('link').length; i++) {
+          var current = indexHTML('link').get()[i].attribs.href;
+          if (current === script) {
+              exists = true;
+              break;
+          }
+      }
+      if (!exists) {
+          write = true;
+          indexHTML(scriptTag).insertAfter(indexHTML('link').get()[indexHTML('link').length - 1]);
+      }
+  });
+  if (write) {
+      this.fs.write(this.destinationPath('app/index.html'), indexHTML.html());
+  } else {
+      this.info(" >< CSS Scripts already exists at index.html");
   }
+}
 });
 
 module.exports = appverseGenerator;
