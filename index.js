@@ -30,7 +30,7 @@ var yeoman = require ('yeoman-generator');
 
 var APPVERSE = "[APPVERSE]";
 
-var appverseGenerator = yeoman.generators.Base.extend({
+var appverseGenerator = yeoman.Base.extend({
   /**
   * Welcome message
   * @param {Object} pkg -- Package information
