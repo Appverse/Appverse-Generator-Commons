@@ -33,8 +33,8 @@ var appverse = require ('appverse-generator-commons');
 
  module.exports = appverse.extend({ //--> Inheritance
   initializing: function () {
-     this.welcome (pkg); //--> Appverse common helper method.
-     this.checkVersion(); // --> Appverse common helper method.
+     this.welcome (pkg);  //--> Appverse common helper method.
+     this.checkVersion();  // --> Appverse common helper method.
   },
   prompting: function () {
   }
