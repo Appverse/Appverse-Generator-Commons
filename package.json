@@ -1,6 +1,6 @@
 {
   "name": "appverse-generator-commons",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Common methods for Appverse Generators",
   "main": "index.js",
   "repository": "appverse/appverse-generator-commons",
