@@ -31,6 +31,16 @@ var yeoman = require ('yeoman-generator');
 var APPVERSE = "[APPVERSE]";
 
 var appverseGenerator = yeoman.Base.extend({
+  constructor: function () {
+        // Calling the super constructor
+        yeoman.Base.apply(this, arguments);
+
+        //adding a custom option
+        this.option('demo', {
+            alias: 'd',
+            desc: 'Loads demo code for example purposes'
+        }); //Adds support for --demo flag
+    },
   /**
   * Welcome message
   * @param {Object} pkg -- Package information
